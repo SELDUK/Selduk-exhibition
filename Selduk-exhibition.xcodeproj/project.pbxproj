@@ -12,6 +12,7 @@
 		2DD64D4A281FA76800B5C7D3 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D49281FA76800B5C7D3 /* StartViewController.swift */; };
 		2DD64D4F281FA76900B5C7D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DD64D4E281FA76900B5C7D3 /* Assets.xcassets */; };
 		2DD64D52281FA76900B5C7D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD64D50281FA76900B5C7D3 /* LaunchScreen.storyboard */; };
+		2DD64D60281FB4EE00B5C7D3 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D5F281FB4EE00B5C7D3 /* Image.swift */; };
 		997ED37B97FCC8054A58A595 /* Pods_Selduk_exhibition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C06F7B91CBF7EF1B80A439 /* Pods_Selduk_exhibition.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,7 @@
 		2DD64D4E281FA76900B5C7D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DD64D51281FA76900B5C7D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DD64D53281FA76900B5C7D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DD64D5F281FB4EE00B5C7D3 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		65FE439C10E49FF877010187 /* Pods-Selduk-exhibition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selduk-exhibition.debug.xcconfig"; path = "Target Support Files/Pods-Selduk-exhibition/Pods-Selduk-exhibition.debug.xcconfig"; sourceTree = "<group>"; };
 		F3C06F7B91CBF7EF1B80A439 /* Pods_Selduk_exhibition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Selduk_exhibition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				2DD64D4E281FA76900B5C7D3 /* Assets.xcassets */,
+				2DD64D5F281FB4EE00B5C7D3 /* Image.swift */,
 				2DD64D50281FA76900B5C7D3 /* LaunchScreen.storyboard */,
 				2DD64D53281FA76900B5C7D3 /* Info.plist */,
 			);
@@ -109,7 +112,6 @@
 				65FE439C10E49FF877010187 /* Pods-Selduk-exhibition.debug.xcconfig */,
 				202174029396AF1FA7298D8D /* Pods-Selduk-exhibition.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -236,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DD64D4A281FA76800B5C7D3 /* StartViewController.swift in Sources */,
+				2DD64D60281FB4EE00B5C7D3 /* Image.swift in Sources */,
 				2DD64D46281FA76800B5C7D3 /* AppDelegate.swift in Sources */,
 				2DD64D48281FA76800B5C7D3 /* SceneDelegate.swift in Sources */,
 			);
