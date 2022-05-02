@@ -80,4 +80,8 @@ enum Image {
     static let colorPink = UIImage(named: "color_pink")!
     static let colorGreen = UIImage(named: "color_green")!
     static let colorYellow = UIImage(named: "color_yellow")!
+    
+    static let logoGIF = UIImage.gifImageWithName("seldukGIF")
+    static let selduk = UIImage(named: "selduk")!
+
 }

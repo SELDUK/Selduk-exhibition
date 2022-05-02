@@ -13,6 +13,13 @@
 		2DD64D4F281FA76900B5C7D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DD64D4E281FA76900B5C7D3 /* Assets.xcassets */; };
 		2DD64D52281FA76900B5C7D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD64D50281FA76900B5C7D3 /* LaunchScreen.storyboard */; };
 		2DD64D60281FB4EE00B5C7D3 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D5F281FB4EE00B5C7D3 /* Image.swift */; };
+		2DD64D62281FB88E00B5C7D3 /* GIF+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D61281FB88E00B5C7D3 /* GIF+Extension.swift */; };
+		2DD64D64281FB8C200B5C7D3 /* seldukGIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2DD64D63281FB8C200B5C7D3 /* seldukGIF.gif */; };
+		2DD64D66281FBA9F00B5C7D3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D65281FBA9F00B5C7D3 /* UIView+Extension.swift */; };
+		2DD64D68281FBCCE00B5C7D3 /* NanumBarunpenB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2DD64D67281FBC7A00B5C7D3 /* NanumBarunpenB.otf */; };
+		2DD64D6A281FBD7100B5C7D3 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D69281FBD7100B5C7D3 /* UIFont+Extension.swift */; };
+		2DD64D6C281FBDDF00B5C7D3 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D6B281FBDDF00B5C7D3 /* UIButton+Extension.swift */; };
+		2DD64D6E281FBE0400B5C7D3 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D6D281FBE0400B5C7D3 /* UIColor+Extension.swift */; };
 		997ED37B97FCC8054A58A595 /* Pods_Selduk_exhibition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C06F7B91CBF7EF1B80A439 /* Pods_Selduk_exhibition.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +33,13 @@
 		2DD64D51281FA76900B5C7D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DD64D53281FA76900B5C7D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DD64D5F281FB4EE00B5C7D3 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		2DD64D61281FB88E00B5C7D3 /* GIF+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GIF+Extension.swift"; sourceTree = "<group>"; };
+		2DD64D63281FB8C200B5C7D3 /* seldukGIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = seldukGIF.gif; sourceTree = "<group>"; };
+		2DD64D65281FBA9F00B5C7D3 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		2DD64D67281FBC7A00B5C7D3 /* NanumBarunpenB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunpenB.otf; sourceTree = "<group>"; };
+		2DD64D69281FBD7100B5C7D3 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		2DD64D6B281FBDDF00B5C7D3 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		2DD64D6D281FBE0400B5C7D3 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		65FE439C10E49FF877010187 /* Pods-Selduk-exhibition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selduk-exhibition.debug.xcconfig"; path = "Target Support Files/Pods-Selduk-exhibition/Pods-Selduk-exhibition.debug.xcconfig"; sourceTree = "<group>"; };
 		F3C06F7B91CBF7EF1B80A439 /* Pods_Selduk_exhibition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Selduk_exhibition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -63,6 +77,7 @@
 		2DD64D44281FA76800B5C7D3 /* Selduk-exhibition */ = {
 			isa = PBXGroup;
 			children = (
+				2DD64D53281FA76900B5C7D3 /* Info.plist */,
 				2DD64D5E281FAB4700B5C7D3 /* Source */,
 				2DD64D5D281FAB1E00B5C7D3 /* Resource */,
 			);
@@ -79,6 +94,11 @@
 		2DD64D5C281FAB0F00B5C7D3 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				2DD64D61281FB88E00B5C7D3 /* GIF+Extension.swift */,
+				2DD64D69281FBD7100B5C7D3 /* UIFont+Extension.swift */,
+				2DD64D65281FBA9F00B5C7D3 /* UIView+Extension.swift */,
+				2DD64D6B281FBDDF00B5C7D3 /* UIButton+Extension.swift */,
+				2DD64D6D281FBE0400B5C7D3 /* UIColor+Extension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -89,7 +109,8 @@
 				2DD64D4E281FA76900B5C7D3 /* Assets.xcassets */,
 				2DD64D5F281FB4EE00B5C7D3 /* Image.swift */,
 				2DD64D50281FA76900B5C7D3 /* LaunchScreen.storyboard */,
-				2DD64D53281FA76900B5C7D3 /* Info.plist */,
+				2DD64D63281FB8C200B5C7D3 /* seldukGIF.gif */,
+				2DD64D67281FBC7A00B5C7D3 /* NanumBarunpenB.otf */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -184,6 +205,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DD64D52281FA76900B5C7D3 /* LaunchScreen.storyboard in Resources */,
+				2DD64D68281FBCCE00B5C7D3 /* NanumBarunpenB.otf in Resources */,
+				2DD64D64281FB8C200B5C7D3 /* seldukGIF.gif in Resources */,
 				2DD64D4F281FA76900B5C7D3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,8 +260,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DD64D6A281FBD7100B5C7D3 /* UIFont+Extension.swift in Sources */,
+				2DD64D66281FBA9F00B5C7D3 /* UIView+Extension.swift in Sources */,
 				2DD64D4A281FA76800B5C7D3 /* StartViewController.swift in Sources */,
+				2DD64D6E281FBE0400B5C7D3 /* UIColor+Extension.swift in Sources */,
 				2DD64D60281FB4EE00B5C7D3 /* Image.swift in Sources */,
+				2DD64D62281FB88E00B5C7D3 /* GIF+Extension.swift in Sources */,
+				2DD64D6C281FBDDF00B5C7D3 /* UIButton+Extension.swift in Sources */,
 				2DD64D46281FA76800B5C7D3 /* AppDelegate.swift in Sources */,
 				2DD64D48281FA76800B5C7D3 /* SceneDelegate.swift in Sources */,
 			);
@@ -389,6 +417,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -417,6 +446,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
