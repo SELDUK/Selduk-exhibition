@@ -8,7 +8,8 @@
 import UIKit.UIImage
 
 enum Image {
-    
+    static let arrowLeftIcon = UIImage(named: "ic_arrowLeft")!
+
     // 캐릭터 모양
     static let navyShapeCircle = UIImage(named: "shape_navy_circle")!
     static let navyShapeCloud = UIImage(named: "shape_navy_cloud")!

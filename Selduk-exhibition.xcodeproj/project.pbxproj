@@ -20,6 +20,12 @@
 		2DD64D6A281FBD7100B5C7D3 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D69281FBD7100B5C7D3 /* UIFont+Extension.swift */; };
 		2DD64D6C281FBDDF00B5C7D3 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D6B281FBDDF00B5C7D3 /* UIButton+Extension.swift */; };
 		2DD64D6E281FBE0400B5C7D3 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D6D281FBE0400B5C7D3 /* UIColor+Extension.swift */; };
+		2DD64D71281FC10A00B5C7D3 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D70281FC10A00B5C7D3 /* BaseNavigationController.swift */; };
+		2DD64D73281FC4BB00B5C7D3 /* SelectShapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D72281FC4BB00B5C7D3 /* SelectShapeViewController.swift */; };
+		2DD64D75281FC5DD00B5C7D3 /* SelectColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D74281FC5DD00B5C7D3 /* SelectColorViewController.swift */; };
+		2DD64D77281FC60F00B5C7D3 /* MakeCharacterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D76281FC60F00B5C7D3 /* MakeCharacterViewCell.swift */; };
+		2DD64D79281FC63400B5C7D3 /* SelectColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D78281FC63400B5C7D3 /* SelectColorCell.swift */; };
+		2DD64D7B281FC65000B5C7D3 /* CharacterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D7A281FC65000B5C7D3 /* CharacterData.swift */; };
 		997ED37B97FCC8054A58A595 /* Pods_Selduk_exhibition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C06F7B91CBF7EF1B80A439 /* Pods_Selduk_exhibition.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +46,12 @@
 		2DD64D69281FBD7100B5C7D3 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		2DD64D6B281FBDDF00B5C7D3 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		2DD64D6D281FBE0400B5C7D3 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		2DD64D70281FC10A00B5C7D3 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		2DD64D72281FC4BB00B5C7D3 /* SelectShapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectShapeViewController.swift; sourceTree = "<group>"; };
+		2DD64D74281FC5DD00B5C7D3 /* SelectColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectColorViewController.swift; sourceTree = "<group>"; };
+		2DD64D76281FC60F00B5C7D3 /* MakeCharacterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCharacterViewCell.swift; sourceTree = "<group>"; };
+		2DD64D78281FC63400B5C7D3 /* SelectColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectColorCell.swift; sourceTree = "<group>"; };
+		2DD64D7A281FC65000B5C7D3 /* CharacterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterData.swift; sourceTree = "<group>"; };
 		65FE439C10E49FF877010187 /* Pods-Selduk-exhibition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selduk-exhibition.debug.xcconfig"; path = "Target Support Files/Pods-Selduk-exhibition/Pods-Selduk-exhibition.debug.xcconfig"; sourceTree = "<group>"; };
 		F3C06F7B91CBF7EF1B80A439 /* Pods_Selduk_exhibition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Selduk_exhibition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -87,6 +99,12 @@
 		2DD64D5B281FAB0800B5C7D3 /* MakeCharacter */ = {
 			isa = PBXGroup;
 			children = (
+				2DD64D49281FA76800B5C7D3 /* StartViewController.swift */,
+				2DD64D72281FC4BB00B5C7D3 /* SelectShapeViewController.swift */,
+				2DD64D74281FC5DD00B5C7D3 /* SelectColorViewController.swift */,
+				2DD64D76281FC60F00B5C7D3 /* MakeCharacterViewCell.swift */,
+				2DD64D78281FC63400B5C7D3 /* SelectColorCell.swift */,
+				2DD64D7A281FC65000B5C7D3 /* CharacterData.swift */,
 			);
 			path = MakeCharacter;
 			sourceTree = "<group>";
@@ -118,13 +136,21 @@
 		2DD64D5E281FAB4700B5C7D3 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				2DD64D6F281FC10100B5C7D3 /* Base */,
 				2DD64D5C281FAB0F00B5C7D3 /* Util */,
 				2DD64D5B281FAB0800B5C7D3 /* MakeCharacter */,
 				2DD64D45281FA76800B5C7D3 /* AppDelegate.swift */,
 				2DD64D47281FA76800B5C7D3 /* SceneDelegate.swift */,
-				2DD64D49281FA76800B5C7D3 /* StartViewController.swift */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		2DD64D6F281FC10100B5C7D3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2DD64D70281FC10A00B5C7D3 /* BaseNavigationController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		702DC9EC9C51EACDBA7FA32A /* Pods */ = {
@@ -262,13 +288,19 @@
 			files = (
 				2DD64D6A281FBD7100B5C7D3 /* UIFont+Extension.swift in Sources */,
 				2DD64D66281FBA9F00B5C7D3 /* UIView+Extension.swift in Sources */,
+				2DD64D7B281FC65000B5C7D3 /* CharacterData.swift in Sources */,
+				2DD64D73281FC4BB00B5C7D3 /* SelectShapeViewController.swift in Sources */,
 				2DD64D4A281FA76800B5C7D3 /* StartViewController.swift in Sources */,
+				2DD64D77281FC60F00B5C7D3 /* MakeCharacterViewCell.swift in Sources */,
+				2DD64D75281FC5DD00B5C7D3 /* SelectColorViewController.swift in Sources */,
 				2DD64D6E281FBE0400B5C7D3 /* UIColor+Extension.swift in Sources */,
 				2DD64D60281FB4EE00B5C7D3 /* Image.swift in Sources */,
 				2DD64D62281FB88E00B5C7D3 /* GIF+Extension.swift in Sources */,
 				2DD64D6C281FBDDF00B5C7D3 /* UIButton+Extension.swift in Sources */,
 				2DD64D46281FA76800B5C7D3 /* AppDelegate.swift in Sources */,
+				2DD64D71281FC10A00B5C7D3 /* BaseNavigationController.swift in Sources */,
 				2DD64D48281FA76800B5C7D3 /* SceneDelegate.swift in Sources */,
+				2DD64D79281FC63400B5C7D3 /* SelectColorCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

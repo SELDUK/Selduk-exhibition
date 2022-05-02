@@ -33,9 +33,10 @@ extension StartViewController {
         
         startButton.do {
             $0.setTitle("START", for: .normal)
-            $0.titleLabel?.font = .nanumPen(size: 65.5)
+            $0.titleLabel?.font = .nanumPen(size: 60)
             $0.setTitleColor(.white, for: .normal)
             $0.setBackgroundColor(.black, for: .normal)
+            $0.addTarget(self, action: #selector(startButtonDidTap), for: .touchUpInside)
         }
     }
     
@@ -76,5 +77,9 @@ extension StartViewController {
             $0.leading.trailing.bottom.equalToSuperview()
             $0.height.equalTo(140)
         }
+    }
+    
+    @objc func startButtonDidTap() {
+        navigationController?.pushViewController(SelectShapeViewController(), animated: true)
     }
 }
