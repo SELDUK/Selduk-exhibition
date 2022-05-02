@@ -12,9 +12,11 @@
 		2DD64D4A281FA76800B5C7D3 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D49281FA76800B5C7D3 /* StartViewController.swift */; };
 		2DD64D4F281FA76900B5C7D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DD64D4E281FA76900B5C7D3 /* Assets.xcassets */; };
 		2DD64D52281FA76900B5C7D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD64D50281FA76900B5C7D3 /* LaunchScreen.storyboard */; };
+		997ED37B97FCC8054A58A595 /* Pods_Selduk_exhibition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C06F7B91CBF7EF1B80A439 /* Pods_Selduk_exhibition.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		202174029396AF1FA7298D8D /* Pods-Selduk-exhibition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selduk-exhibition.release.xcconfig"; path = "Target Support Files/Pods-Selduk-exhibition/Pods-Selduk-exhibition.release.xcconfig"; sourceTree = "<group>"; };
 		2DD64D42281FA76800B5C7D3 /* Selduk-exhibition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Selduk-exhibition.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD64D45281FA76800B5C7D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DD64D47281FA76800B5C7D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		2DD64D4E281FA76900B5C7D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DD64D51281FA76900B5C7D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DD64D53281FA76900B5C7D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65FE439C10E49FF877010187 /* Pods-Selduk-exhibition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selduk-exhibition.debug.xcconfig"; path = "Target Support Files/Pods-Selduk-exhibition/Pods-Selduk-exhibition.debug.xcconfig"; sourceTree = "<group>"; };
+		F3C06F7B91CBF7EF1B80A439 /* Pods_Selduk_exhibition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Selduk_exhibition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				997ED37B97FCC8054A58A595 /* Pods_Selduk_exhibition.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				2DD64D44281FA76800B5C7D3 /* Selduk-exhibition */,
 				2DD64D43281FA76800B5C7D3 /* Products */,
+				702DC9EC9C51EACDBA7FA32A /* Pods */,
+				AB553CCAA7F7AED649E5204E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +103,24 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		702DC9EC9C51EACDBA7FA32A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				65FE439C10E49FF877010187 /* Pods-Selduk-exhibition.debug.xcconfig */,
+				202174029396AF1FA7298D8D /* Pods-Selduk-exhibition.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AB553CCAA7F7AED649E5204E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F3C06F7B91CBF7EF1B80A439 /* Pods_Selduk_exhibition.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +128,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2DD64D56281FA76900B5C7D3 /* Build configuration list for PBXNativeTarget "Selduk-exhibition" */;
 			buildPhases = (
+				A16DF23AE28F320E4A39FFDF /* [CP] Check Pods Manifest.lock */,
 				2DD64D3E281FA76800B5C7D3 /* Sources */,
 				2DD64D3F281FA76800B5C7D3 /* Frameworks */,
 				2DD64D40281FA76800B5C7D3 /* Resources */,
+				9A4A2D9B7CD01527753D6422 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -160,6 +187,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9A4A2D9B7CD01527753D6422 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Selduk-exhibition/Pods-Selduk-exhibition-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Selduk-exhibition/Pods-Selduk-exhibition-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Selduk-exhibition/Pods-Selduk-exhibition-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A16DF23AE28F320E4A39FFDF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Selduk-exhibition-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2DD64D3E281FA76800B5C7D3 /* Sources */ = {
@@ -304,6 +373,7 @@
 		};
 		2DD64D57281FA76900B5C7D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65FE439C10E49FF877010187 /* Pods-Selduk-exhibition.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -331,6 +401,7 @@
 		};
 		2DD64D58281FA76900B5C7D3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 202174029396AF1FA7298D8D /* Pods-Selduk-exhibition.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
