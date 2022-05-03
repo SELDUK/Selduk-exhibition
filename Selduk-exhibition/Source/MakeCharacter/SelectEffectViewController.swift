@@ -1,5 +1,5 @@
 //
-//  electExpressionViewController.swift
+//  SelectEffectViewController.swift
 //  Selduk-exhibition
 //
 //  Created by 권준상 on 2022/05/03.
@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-final class SelectExpressionViewController: UIViewController {
+final class SelectEffectViewController: UIViewController {
     
     let characterLabel = UILabel()
     let loadingBar = UIProgressView()
@@ -18,6 +18,7 @@ final class SelectExpressionViewController: UIViewController {
     let shapeImageView = UIImageView()
     let expressionImageView = UIImageView()
     let featureImageView = UIImageView()
+    let effectImageView = UIImageView()
     let nextButton = UIButton()
     let popButton = UIButton()
     let collectionView: UICollectionView = {
@@ -29,9 +30,12 @@ final class SelectExpressionViewController: UIViewController {
     }()
     
     var cellImageList = [
-        Image.expressionBar1, Image.expressionBar2, Image.expressionBar3, Image.expressionBar4, Image.expressionBar5, Image.expressionBar6, Image.expressionBar7, Image.expressionBar8, Image.expressionBar9, Image.expressionBar10, Image.expressionBar11, Image.expressionBar12, Image.expressionBar13, Image.expressionBar14, Image.expressionBar15]
+        Image.effectBar1, Image.effectBar2, Image.effectBar3, Image.effectBar4, Image.effectBar5, Image.effectBar6, Image.effectBar7, Image.effectBar8, Image.effectBar9, Image.effectBar10, Image.effectBar11
+    ]
     
-    var expressionImageList = [Image.expressionBar1, Image.expressionBar2, Image.expressionBar3, Image.expressionBar4, Image.expressionBar5, Image.expressionBar6, Image.expressionBar7, Image.expressionBar8, Image.expressionBar9, Image.expressionBar10, Image.expressionBar11, Image.expressionBar12, Image.expressionBar13, Image.expressionBar14, Image.expressionBar15]
+    var effectImageList = [
+        Image.effect1, Image.effect2, Image.effect3, Image.effect4, Image.effect5, Image.effect6, Image.effect7, Image.effect8, Image.effect9, Image.effect10, Image.effect11
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,20 +53,20 @@ final class SelectExpressionViewController: UIViewController {
     
     private func setLoadingBarAnimation() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.loadingBar.setProgress(1 / 2, animated: true)
+            self.loadingBar.setProgress(5 / 8, animated: true)
         }
     }
 
 }
 
-extension SelectExpressionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension SelectEffectViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 102, height: 102)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        return 11
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -73,12 +77,12 @@ extension SelectExpressionViewController: UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.expressionImageView.image = expressionImageList[indexPath.item]
-        CharacterData.selectedExpression = expressionImageList[indexPath.item]
+        self.effectImageView.image = effectImageList[indexPath.item]
+        CharacterData.selectedEffect = effectImageList[indexPath.item]
     }
 }
 
-extension SelectExpressionViewController {
+extension SelectEffectViewController {
     private func setProperties() {
         view.do {
             $0.backgroundColor = .white
@@ -94,13 +98,13 @@ extension SelectExpressionViewController {
             $0.clipsToBounds = true
             $0.layer.sublayers![1].cornerRadius = 8.5
             $0.subviews[1].clipsToBounds = true
-            $0.progress = 3 / 8
+            $0.progress = 1 / 2
             $0.progressTintColor = UIColor.colorWithRGBHex(hex: 0x178900)
             $0.trackTintColor = .lightGray
         }
         
         titleLabel.do {
-            $0.text = "4. FACE"
+            $0.text = "5. EFFECT"
             $0.textColor = UIColor.black
             $0.font = .nanumPen(size: 50)
         }
@@ -111,7 +115,7 @@ extension SelectExpressionViewController {
         }
         
         expressionImageView.do {
-            $0.image = Image.expressionBar1
+            $0.image = CharacterData.selectedExpression
             $0.contentMode = .scaleToFill
         }
         
@@ -148,7 +152,8 @@ extension SelectExpressionViewController {
     
     private func setViewHierarchy() {
         view.addSubviews(characterLabel, loadingBar, titleLabel, containerView, collectionView, nextButton)
-        containerView.addSubviews(shapeImageView, expressionImageView, featureImageView)
+        containerView.addSubviews(shapeImageView, expressionImageView, featureImageView, effectImageView)
+        effectImageView.bringSubviewToFront(shapeImageView)
         shapeImageView.bringSubviewToFront(expressionImageView)
         expressionImageView.bringSubviewToFront(featureImageView)
     }
@@ -179,6 +184,11 @@ extension SelectExpressionViewController {
         }
         
         shapeImageView.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.width.height.equalTo(350)
+        }
+        
+        effectImageView.snp.makeConstraints {
             $0.center.equalToSuperview()
             $0.width.height.equalTo(350)
         }

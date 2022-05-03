@@ -82,6 +82,32 @@ enum Image {
     static let colorGreen = UIImage(named: "color_green")!
     static let colorYellow = UIImage(named: "color_yellow")!
     
+    // 캐릭터 이펙트
+    static let effect1 = UIImage(named: "effect1")!
+    static let effect2 = UIImage(named: "effect2")!
+    static let effect3 = UIImage(named: "effect3")!
+    static let effect4 = UIImage(named: "effect4")!
+    static let effect5 = UIImage(named: "effect5")!
+    static let effect6 = UIImage(named: "effect6")!
+    static let effect7 = UIImage(named: "effect7")!
+    static let effect8 = UIImage(named: "effect8")!
+    static let effect9 = UIImage(named: "effect9")!
+    static let effect10 = UIImage(named: "effect10")!
+    static let effect11 = UIImage(named: "effect11")!
+    
+    // 캐릭터 이펙트 바
+    static let effectBar1 = UIImage(named: "effectBar1")!
+    static let effectBar2 = UIImage(named: "effectBar2")!
+    static let effectBar3 = UIImage(named: "effectBar3")!
+    static let effectBar4 = UIImage(named: "effectBar4")!
+    static let effectBar5 = UIImage(named: "effectBar5")!
+    static let effectBar6 = UIImage(named: "effectBar6")!
+    static let effectBar7 = UIImage(named: "effectBar7")!
+    static let effectBar8 = UIImage(named: "effectBar8")!
+    static let effectBar9 = UIImage(named: "effectBar9")!
+    static let effectBar10 = UIImage(named: "effectBar10")!
+    static let effectBar11 = UIImage(named: "effectBar11")!
+    
     static let logoGIF = UIImage.gifImageWithName("seldukGIF")
     static let selduk = UIImage(named: "selduk")!
 
