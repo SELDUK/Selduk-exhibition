@@ -27,6 +27,7 @@ final class SelectFeatureViewController: UIViewController {
         let cv = UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 120), collectionViewLayout: layout)
         return cv
     }()
+    let popBarButton = UIBarButtonItem()
     
     var cellImageList = [Image.featureBarNone, Image.featureBarHair1, Image.featureBarAngel, Image.featureBarFrog, Image.featureBarHat, Image.featureBarSleepHat, Image.featureBarHeadphone, Image.featureBarRibbon, Image.featureBarHair2, Image.featureBarSunglasses]
     
@@ -81,6 +82,17 @@ extension SelectFeatureViewController {
     private func setProperties() {
         view.do {
             $0.backgroundColor = .white
+        }
+        
+        popBarButton.do {
+            $0.customView = popButton
+            $0.customView?.translatesAutoresizingMaskIntoConstraints = false
+            $0.customView?.heightAnchor.constraint(equalToConstant: 35).isActive = true
+            $0.customView?.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        }
+        
+        navigationItem.do{
+            $0.leftBarButtonItem = popBarButton
         }
         
         characterLabel.do {
@@ -210,6 +222,8 @@ extension SelectFeatureViewController {
             let selectExpressionViewController = SelectExpressionViewController()
             navigationController?.pushViewController(selectExpressionViewController, animated: false)
         case popButton:
+            CharacterData.selectedFeature = nil
+            CharacterData.selectedColorWithShape = CharacterData.colorShapeImageList[0][0]
             navigationController?.popViewController(animated: true)
         default:
             return

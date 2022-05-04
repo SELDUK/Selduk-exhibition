@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class StartViewController: UIViewController {
+class StartViewController: BaseViewController {
 
     let logoView = UIView()
     let logoGIFImageView = UIImageView(image: Image.logoGIF)
@@ -21,6 +21,10 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
         setProperties()
         setLayouts()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setNavigationBarAppearance()
     }
 
 }

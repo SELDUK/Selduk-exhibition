@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-final class SelectBackgroundViewController: UIViewController {
+final class SelectBackgroundViewController: BaseViewController {
     
     let characterLabel = UILabel()
     let loadingBar = UIProgressView()
@@ -28,6 +28,7 @@ final class SelectBackgroundViewController: UIViewController {
         let cv = UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 120), collectionViewLayout: layout)
         return cv
     }()
+    let popBarButton = UIBarButtonItem()
     
     private var backButtonAppearance: UIBarButtonItemAppearance = {
         let backButtonAppearance = UIBarButtonItemAppearance()
@@ -56,9 +57,6 @@ final class SelectBackgroundViewController: UIViewController {
         setLoadingBarAnimation()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        setNavigationBarAppearance(color: UIColor.white)
-    }
     
     private func registerTarget() {
         [nextButton, popButton].forEach {
@@ -70,21 +68,6 @@ final class SelectBackgroundViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.loadingBar.setProgress(1, animated: true)
         }
-    }
-    
-    private func setNavigationBarAppearance(color: UIColor = UIColor.white) {
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = color
-        appearance.setBackIndicatorImage(backButtonImage,
-                                         transitionMaskImage: backButtonImage)
-        appearance.shadowColor = nil
-        appearance.backButtonAppearance = backButtonAppearance
-        
-        navigationController?.navigationBar.tintColor = UIColor.black
-        navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        navigationController?.navigationBar.compactAppearance = appearance
     }
 
 }
@@ -107,9 +90,10 @@ extension SelectBackgroundViewController: UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.view.backgroundColor = colorList[indexPath.item]
-        self.collectionView.backgroundColor = colorList[indexPath.item]
-        self.setNavigationBarAppearance(color: colorList[indexPath.item])
+        view.backgroundColor = colorList[indexPath.item]
+        collectionView.backgroundColor = colorList[indexPath.item]
+        setNavigationBarAppearance(color: colorList[indexPath.item])
+        CharacterData.selectedBackground = colorList[indexPath.item]
     }
 }
 
@@ -117,6 +101,17 @@ extension SelectBackgroundViewController {
     private func setProperties() {
         view.do {
             $0.backgroundColor = .white
+        }
+        
+        popBarButton.do {
+            $0.customView = popButton
+            $0.customView?.translatesAutoresizingMaskIntoConstraints = false
+            $0.customView?.heightAnchor.constraint(equalToConstant: 35).isActive = true
+            $0.customView?.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        }
+        
+        navigationItem.do{
+            $0.leftBarButtonItem = popBarButton
         }
         
         characterLabel.do {
@@ -256,9 +251,10 @@ extension SelectBackgroundViewController {
     @objc private func buttonTapAction(_ sender: UIButton) {
         switch sender {
         case nextButton:
-            let setNicknameViewController = SetNickNameViewController()
-            navigationController?.pushViewController(setNicknameViewController, animated: false)
+            navigationController?.pushViewController(PhotoCardViewController(), animated: false)
         case popButton:
+            CharacterData.selectedBackground = .white
+            CharacterData.comment = nil
             navigationController?.popViewController(animated: true)
         default:
             return

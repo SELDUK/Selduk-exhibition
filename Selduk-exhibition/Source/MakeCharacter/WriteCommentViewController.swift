@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-final class WriteCommentViewController: UIViewController {
+final class WriteCommentViewController: BaseViewController {
     
     let characterLabel = UILabel()
     let loadingBar = UIProgressView()
@@ -18,6 +18,7 @@ final class WriteCommentViewController: UIViewController {
     let wordCountLabel = UILabel()
     let nextButton = UIButton()
     let popButton = UIButton()
+    let popBarButton = UIBarButtonItem()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,10 @@ final class WriteCommentViewController: UIViewController {
         setLayouts()
         registerTarget()
         setLoadingBarAnimation()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setNavigationBarAppearance()
     }
     
     override func touchesBegan(_: Set<UITouch>, with _: UIEvent?) {
@@ -42,12 +47,24 @@ final class WriteCommentViewController: UIViewController {
             self.loadingBar.setProgress(7 / 8, animated: true)
         }
     }
+
 }
 
 extension WriteCommentViewController {
     private func setProperties() {
         view.do {
             $0.backgroundColor = .white
+        }
+        
+        popBarButton.do {
+            $0.customView = popButton
+            $0.customView?.translatesAutoresizingMaskIntoConstraints = false
+            $0.customView?.heightAnchor.constraint(equalToConstant: 35).isActive = true
+            $0.customView?.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        }
+        
+        navigationItem.do{
+            $0.leftBarButtonItem = popBarButton
         }
         
         characterLabel.do {
@@ -152,7 +169,9 @@ extension WriteCommentViewController {
         case nextButton:
             var commentTrimText = ""
             
-            if (commentTextView.textColor == UIColor.lightGray) || commentTextView.text.count == 0 {
+            if (commentTextView.textColor == UIColor.lightGray) || commentTextView.text.trimmingCharacters(in: .whitespaces).count == 0 {
+                commentTextView.text = commentTextView.text.trimmingCharacters(in: .whitespaces)
+                wordCountLabel.text = "0/40자"
                 self.showToastMessageAlert(message: "칭찬을 작성해주세요")
                 return
             } else {
@@ -161,25 +180,14 @@ extension WriteCommentViewController {
                 navigationController?.pushViewController(SelectBackgroundViewController(), animated: false)
             }
             
-            
         case popButton:
+            CharacterData.nickname = nil
             navigationController?.popViewController(animated: true)
         default:
             return
         }
     }
     
-    func showToastMessageAlert(message: String) {
-        let alert = UIAlertController(title: message,
-                                      message: "",
-                                      preferredStyle: .alert)
-        
-        present(alert, animated: true, completion: nil)
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
-            alert.dismiss(animated: true)
-        }
-    }
 }
 
 extension WriteCommentViewController: UITextViewDelegate {
@@ -199,12 +207,15 @@ extension WriteCommentViewController: UITextViewDelegate {
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        guard text != "\n" else { return false }
         let currentText = textView.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return false }
+        
         let changedText = currentText.replacingCharacters(in: stringRange, with: text)
         
         wordCountLabel.text = "\(changedText.count)/40자"
         return changedText.count <= 39
     }
+    
 }
 

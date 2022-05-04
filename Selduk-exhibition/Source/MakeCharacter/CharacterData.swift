@@ -9,16 +9,14 @@ import UIKit
 
 struct CharacterData {
     static var selectedShape: UIImage = Image.navyShapeCircle
-    static var selectedColorWithShape: UIImage = Image.navyShapeCircle
+    static var selectedColorWithShape: UIImage = colorShapeImageList[selectedShapeIndex - 1][0]
     static var selectedFeature: UIImage?
     static var selectedShapeIndex: Int = 1
     static var selectedExpression: UIImage = Image.expression1
     static var selectedEffect: UIImage?
     static var nickname: String?
     static var comment: String?
-    static var selfLoveScore: Int?
-    static var characterIndex: Int?
-    static var myCharacterURLstring: String?
+    static var selectedBackground: UIColor = UIColor.white
     
     static let colorShapeImageList = [
         [Image.navyShapeCircle, Image.yellowShapeCircle, Image.pinkShapeCircle, Image.mauveShapeCircle, Image.greenShapeCircle],

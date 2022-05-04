@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-final class SetNickNameViewController: UIViewController {
+final class SetNickNameViewController: BaseViewController {
     
     let characterLabel = UILabel()
     let loadingBar = UIProgressView()
@@ -23,6 +23,7 @@ final class SetNickNameViewController: UIViewController {
     let nameTextField = UITextField()
     let nextButton = UIButton()
     let popButton = UIButton()
+    let popBarButton = UIBarButtonItem()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +54,17 @@ extension SetNickNameViewController {
     private func setProperties() {
         view.do {
             $0.backgroundColor = .white
+        }
+        
+        popBarButton.do {
+            $0.customView = popButton
+            $0.customView?.translatesAutoresizingMaskIntoConstraints = false
+            $0.customView?.heightAnchor.constraint(equalToConstant: 35).isActive = true
+            $0.customView?.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        }
+        
+        navigationItem.do{
+            $0.leftBarButtonItem = popBarButton
         }
         
         characterLabel.do {
@@ -218,23 +230,13 @@ extension SetNickNameViewController {
                 }
             }
         case popButton:
+            CharacterData.selectedEffect = nil
             navigationController?.popViewController(animated: true)
         default:
             return
         }
     }
     
-    func showToastMessageAlert(message: String) {
-        let alert = UIAlertController(title: message,
-                                      message: "",
-                                      preferredStyle: .alert)
-        
-        present(alert, animated: true, completion: nil)
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
-            alert.dismiss(animated: true)
-        }
-    }
 }
 
 extension SetNickNameViewController: UITextFieldDelegate {

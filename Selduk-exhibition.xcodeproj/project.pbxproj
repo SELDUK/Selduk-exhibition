@@ -10,6 +10,10 @@
 		2D6B941C28225F93003AAD64 /* exhibitionSelduk.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2D6B941B28225F93003AAD64 /* exhibitionSelduk.gif */; };
 		2D6B941E282271BD003AAD64 /* WriteCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6B941D282271BD003AAD64 /* WriteCommentViewController.swift */; };
 		2D6B94222822765A003AAD64 /* SelectBackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6B94212822765A003AAD64 /* SelectBackgroundViewController.swift */; };
+		2D6B94242822A09C003AAD64 /* PhotoCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6B94232822A09C003AAD64 /* PhotoCardViewController.swift */; };
+		2D6B94282822A34B003AAD64 /* confetti.json in Resources */ = {isa = PBXBuildFile; fileRef = 2D6B94272822A34B003AAD64 /* confetti.json */; };
+		2D6B942A2822BEC2003AAD64 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6B94292822BEC2003AAD64 /* BaseViewController.swift */; };
+		2D6B942C2822C341003AAD64 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6B942B2822C341003AAD64 /* BaseNavigationController.swift */; };
 		2DD64D46281FA76800B5C7D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D45281FA76800B5C7D3 /* AppDelegate.swift */; };
 		2DD64D48281FA76800B5C7D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D47281FA76800B5C7D3 /* SceneDelegate.swift */; };
 		2DD64D4A281FA76800B5C7D3 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D49281FA76800B5C7D3 /* StartViewController.swift */; };
@@ -22,7 +26,6 @@
 		2DD64D6A281FBD7100B5C7D3 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D69281FBD7100B5C7D3 /* UIFont+Extension.swift */; };
 		2DD64D6C281FBDDF00B5C7D3 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D6B281FBDDF00B5C7D3 /* UIButton+Extension.swift */; };
 		2DD64D6E281FBE0400B5C7D3 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D6D281FBE0400B5C7D3 /* UIColor+Extension.swift */; };
-		2DD64D71281FC10A00B5C7D3 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D70281FC10A00B5C7D3 /* BaseNavigationController.swift */; };
 		2DD64D73281FC4BB00B5C7D3 /* SelectShapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D72281FC4BB00B5C7D3 /* SelectShapeViewController.swift */; };
 		2DD64D75281FC5DD00B5C7D3 /* SelectColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D74281FC5DD00B5C7D3 /* SelectColorViewController.swift */; };
 		2DD64D77281FC60F00B5C7D3 /* MakeCharacterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD64D76281FC60F00B5C7D3 /* MakeCharacterViewCell.swift */; };
@@ -40,6 +43,10 @@
 		2D6B941B28225F93003AAD64 /* exhibitionSelduk.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = exhibitionSelduk.gif; sourceTree = "<group>"; };
 		2D6B941D282271BD003AAD64 /* WriteCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteCommentViewController.swift; sourceTree = "<group>"; };
 		2D6B94212822765A003AAD64 /* SelectBackgroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBackgroundViewController.swift; sourceTree = "<group>"; };
+		2D6B94232822A09C003AAD64 /* PhotoCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCardViewController.swift; sourceTree = "<group>"; };
+		2D6B94272822A34B003AAD64 /* confetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = confetti.json; sourceTree = "<group>"; };
+		2D6B94292822BEC2003AAD64 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		2D6B942B2822C341003AAD64 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		2DD64D42281FA76800B5C7D3 /* Selduk-exhibition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Selduk-exhibition.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD64D45281FA76800B5C7D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DD64D47281FA76800B5C7D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,7 +61,6 @@
 		2DD64D69281FBD7100B5C7D3 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		2DD64D6B281FBDDF00B5C7D3 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		2DD64D6D281FBE0400B5C7D3 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		2DD64D70281FC10A00B5C7D3 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		2DD64D72281FC4BB00B5C7D3 /* SelectShapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectShapeViewController.swift; sourceTree = "<group>"; };
 		2DD64D74281FC5DD00B5C7D3 /* SelectColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectColorViewController.swift; sourceTree = "<group>"; };
 		2DD64D76281FC60F00B5C7D3 /* MakeCharacterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCharacterViewCell.swift; sourceTree = "<group>"; };
@@ -120,6 +126,7 @@
 				2DD64D82282123BC00B5C7D3 /* SetNicknameViewController.swift */,
 				2D6B941D282271BD003AAD64 /* WriteCommentViewController.swift */,
 				2D6B94212822765A003AAD64 /* SelectBackgroundViewController.swift */,
+				2D6B94232822A09C003AAD64 /* PhotoCardViewController.swift */,
 				2DD64D76281FC60F00B5C7D3 /* MakeCharacterViewCell.swift */,
 				2DD64D78281FC63400B5C7D3 /* SelectColorCell.swift */,
 				2DD64D7A281FC65000B5C7D3 /* CharacterData.swift */,
@@ -144,6 +151,7 @@
 			children = (
 				2DD64D4E281FA76900B5C7D3 /* Assets.xcassets */,
 				2DD64D5F281FB4EE00B5C7D3 /* Image.swift */,
+				2D6B94272822A34B003AAD64 /* confetti.json */,
 				2DD64D50281FA76900B5C7D3 /* LaunchScreen.storyboard */,
 				2DD64D67281FBC7A00B5C7D3 /* NanumBarunpenB.otf */,
 				2D6B941B28225F93003AAD64 /* exhibitionSelduk.gif */,
@@ -166,7 +174,8 @@
 		2DD64D6F281FC10100B5C7D3 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				2DD64D70281FC10A00B5C7D3 /* BaseNavigationController.swift */,
+				2D6B94292822BEC2003AAD64 /* BaseViewController.swift */,
+				2D6B942B2822C341003AAD64 /* BaseNavigationController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -248,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D6B94282822A34B003AAD64 /* confetti.json in Resources */,
 				2DD64D52281FA76900B5C7D3 /* LaunchScreen.storyboard in Resources */,
 				2DD64D68281FBCCE00B5C7D3 /* NanumBarunpenB.otf in Resources */,
 				2DD64D4F281FA76900B5C7D3 /* Assets.xcassets in Resources */,
@@ -304,9 +314,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D6B942C2822C341003AAD64 /* BaseNavigationController.swift in Sources */,
 				2DD64D6A281FBD7100B5C7D3 /* UIFont+Extension.swift in Sources */,
 				2DD64D66281FBA9F00B5C7D3 /* UIView+Extension.swift in Sources */,
 				2DD64D7B281FC65000B5C7D3 /* CharacterData.swift in Sources */,
+				2D6B942A2822BEC2003AAD64 /* BaseViewController.swift in Sources */,
 				2DD64D73281FC4BB00B5C7D3 /* SelectShapeViewController.swift in Sources */,
 				2DD64D4A281FA76800B5C7D3 /* StartViewController.swift in Sources */,
 				2DD64D7D282100E800B5C7D3 /* SelectFeatureViewController.swift in Sources */,
@@ -319,8 +331,8 @@
 				2DD64D7F282101D800B5C7D3 /* SelectExpressionViewController.swift in Sources */,
 				2DD64D6C281FBDDF00B5C7D3 /* UIButton+Extension.swift in Sources */,
 				2DD64D46281FA76800B5C7D3 /* AppDelegate.swift in Sources */,
-				2DD64D71281FC10A00B5C7D3 /* BaseNavigationController.swift in Sources */,
 				2DD64D83282123BC00B5C7D3 /* SetNicknameViewController.swift in Sources */,
+				2D6B94242822A09C003AAD64 /* PhotoCardViewController.swift in Sources */,
 				2D6B941E282271BD003AAD64 /* WriteCommentViewController.swift in Sources */,
 				2DD64D48281FA76800B5C7D3 /* SceneDelegate.swift in Sources */,
 				2DD64D81282105BB00B5C7D3 /* SelectEffectViewController.swift in Sources */,

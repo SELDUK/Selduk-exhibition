@@ -16,6 +16,7 @@ final class SelectShapeViewController: UIViewController {
     let shapeImageView = UIImageView()
     let expressionImageView = UIImageView()
     let nextButton = UIButton()
+    let popButton = UIButton()
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -23,6 +24,7 @@ final class SelectShapeViewController: UIViewController {
         let cv = UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 120), collectionViewLayout: layout)
         return cv
     }()
+    let popBarButton = UIBarButtonItem()
     
     var cellImageList = [Image.navyShapeCircle, Image.navyShapeCloud, Image.navyShapeSharpEar, Image.navyShapeBread, Image.navyShapeRoundEar, Image.navyShapeJjang]
     
@@ -71,6 +73,17 @@ extension SelectShapeViewController {
             $0.backgroundColor = .white
         }
         
+        popBarButton.do {
+            $0.customView = popButton
+            $0.customView?.translatesAutoresizingMaskIntoConstraints = false
+            $0.customView?.heightAnchor.constraint(equalToConstant: 35).isActive = true
+            $0.customView?.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        }
+        
+        navigationItem.do{
+            $0.leftBarButtonItem = popBarButton
+        }
+        
         characterLabel.do {
             $0.text = "MY CHARACTER"
             $0.font = .nanumPen(size: 60)
@@ -115,6 +128,11 @@ extension SelectShapeViewController {
             $0.setTitleColor(.white, for: .normal)
             $0.setBackgroundColor(.black, for: .normal)
             $0.titleLabel?.font = .nanumPen(size: 60)
+            $0.addTarget(self, action: #selector(buttonTapAction(_:)), for: .touchUpInside)
+        }
+        
+        popButton.do {
+            $0.setImage(Image.arrowLeftIcon, for: .normal)
             $0.addTarget(self, action: #selector(buttonTapAction(_:)), for: .touchUpInside)
         }
         
@@ -185,6 +203,10 @@ extension SelectShapeViewController {
         case nextButton:
             let selectColorViewController = SelectColorViewController()
             navigationController?.pushViewController(selectColorViewController, animated: false)
+        case popButton:
+            CharacterData.selectedShape = Image.navyShapeCircle
+            CharacterData.selectedShapeIndex = 1
+            navigationController?.popViewController(animated: true)
         default:
             return
         }

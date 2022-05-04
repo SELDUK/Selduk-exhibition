@@ -27,6 +27,7 @@ final class SelectExpressionViewController: UIViewController {
         let cv = UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 120), collectionViewLayout: layout)
         return cv
     }()
+    let popBarButton = UIBarButtonItem()
     
     var cellImageList = [
         Image.expressionBar1, Image.expressionBar2, Image.expressionBar3, Image.expressionBar4, Image.expressionBar5, Image.expressionBar6, Image.expressionBar7, Image.expressionBar8, Image.expressionBar9, Image.expressionBar10, Image.expressionBar11, Image.expressionBar12, Image.expressionBar13, Image.expressionBar14, Image.expressionBar15]
@@ -82,6 +83,17 @@ extension SelectExpressionViewController {
     private func setProperties() {
         view.do {
             $0.backgroundColor = .white
+        }
+        
+        popBarButton.do {
+            $0.customView = popButton
+            $0.customView?.translatesAutoresizingMaskIntoConstraints = false
+            $0.customView?.heightAnchor.constraint(equalToConstant: 35).isActive = true
+            $0.customView?.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        }
+        
+        navigationItem.do{
+            $0.leftBarButtonItem = popBarButton
         }
         
         characterLabel.do {
@@ -212,6 +224,8 @@ extension SelectExpressionViewController {
             let selectEffectViewController = SelectEffectViewController()
             navigationController?.pushViewController(selectEffectViewController, animated: false)
         case popButton:
+            CharacterData.selectedFeature = nil
+            CharacterData.selectedExpression = Image.expression1
             navigationController?.popViewController(animated: true)
         default:
             return

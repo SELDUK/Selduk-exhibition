@@ -28,13 +28,14 @@ final class SelectEffectViewController: UIViewController {
         let cv = UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 120), collectionViewLayout: layout)
         return cv
     }()
+    let popBarButton = UIBarButtonItem()
     
     var cellImageList = [
-        Image.effectBar1, Image.effectBar2, Image.effectBar3, Image.effectBar4, Image.effectBar5, Image.effectBar6, Image.effectBar7, Image.effectBar8, Image.effectBar9, Image.effectBar10, Image.effectBar11
+        Image.featureBarNone, Image.effectBar1, Image.effectBar2, Image.effectBar3, Image.effectBar4, Image.effectBar5, Image.effectBar6, Image.effectBar7, Image.effectBar8, Image.effectBar9, Image.effectBar10, Image.effectBar11
     ]
     
     var effectImageList = [
-        Image.effect1, Image.effect2, Image.effect3, Image.effect4, Image.effect5, Image.effect6, Image.effect7, Image.effect8, Image.effect9, Image.effect10, Image.effect11
+        nil, Image.effect1, Image.effect2, Image.effect3, Image.effect4, Image.effect5, Image.effect6, Image.effect7, Image.effect8, Image.effect9, Image.effect10, Image.effect11
     ]
     
     override func viewDidLoad() {
@@ -66,7 +67,7 @@ extension SelectEffectViewController: UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 11
+        return 12
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -86,6 +87,17 @@ extension SelectEffectViewController {
     private func setProperties() {
         view.do {
             $0.backgroundColor = .white
+        }
+        
+        popBarButton.do {
+            $0.customView = popButton
+            $0.customView?.translatesAutoresizingMaskIntoConstraints = false
+            $0.customView?.heightAnchor.constraint(equalToConstant: 35).isActive = true
+            $0.customView?.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        }
+        
+        navigationItem.do{
+            $0.leftBarButtonItem = popBarButton
         }
         
         characterLabel.do {
@@ -222,6 +234,8 @@ extension SelectEffectViewController {
             let setNicknameViewController = SetNickNameViewController()
             navigationController?.pushViewController(setNicknameViewController, animated: false)
         case popButton:
+            CharacterData.selectedExpression = Image.expression1
+            CharacterData.selectedEffect = nil
             navigationController?.popViewController(animated: true)
         default:
             return
