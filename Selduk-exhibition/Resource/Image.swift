@@ -110,6 +110,14 @@ enum Image {
     static let colorGreen = UIImage(named: "color_green")!
     static let colorYellow = UIImage(named: "color_yellow")!
     
+    // 캐릭터 배경 색
+    static let colorWhite = UIImage(named: "color_white")!
+    static let colorPaleLilac = UIImage(named: "color_palelilac")!
+    static let colorPalePink = UIImage(named: "color_palepink")!
+    static let colorEcru = UIImage(named: "color_ecru")!
+    static let colorLightBlue = UIImage(named: "color_lightblue")!
+    static let colorPaleYellow = UIImage(named: "color_paleyellow")!
+    
     // 캐릭터 이펙트
     static let effect1 = UIImage(named: "effect1")!
     static let effect2 = UIImage(named: "effect2")!

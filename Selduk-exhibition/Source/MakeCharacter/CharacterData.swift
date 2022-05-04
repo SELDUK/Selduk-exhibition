@@ -15,6 +15,7 @@ struct CharacterData {
     static var selectedExpression: UIImage = Image.expression1
     static var selectedEffect: UIImage?
     static var nickname: String?
+    static var comment: String?
     static var selfLoveScore: Int?
     static var characterIndex: Int?
     static var myCharacterURLstring: String?

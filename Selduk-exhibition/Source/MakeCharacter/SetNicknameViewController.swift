@@ -95,7 +95,6 @@ extension SetNickNameViewController {
             $0.inputAccessoryView = nil
             $0.textAlignment = .center
             $0.font = .nanumPen(size: 50)
-            $0.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
             $0.becomeFirstResponder()
         }
         
@@ -211,9 +210,11 @@ extension SetNickNameViewController {
         case nextButton:
             if let name = nameTextField.text {
                 if name.trimmingCharacters(in: .whitespaces).count == 0 {
+                    self.showToastMessageAlert(message: "닉네임을 입력해주세요")
                     nameTextField.text = name.trimmingCharacters(in: .whitespaces)
                 } else {
                     CharacterData.nickname = name.trimmingCharacters(in: .whitespaces)
+                    navigationController?.pushViewController(WriteCommentViewController(), animated: false)
                 }
             }
         case popButton:
@@ -223,8 +224,16 @@ extension SetNickNameViewController {
         }
     }
     
-    @objc func textFieldDidChange() {
+    func showToastMessageAlert(message: String) {
+        let alert = UIAlertController(title: message,
+                                      message: "",
+                                      preferredStyle: .alert)
         
+        present(alert, animated: true, completion: nil)
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
+            alert.dismiss(animated: true)
+        }
     }
 }
 
