@@ -12,7 +12,7 @@ struct CharacterData {
     static var selectedColorWithShape: UIImage = Image.navyShapeCircle
     static var selectedFeature: UIImage?
     static var selectedShapeIndex: Int = 1
-    static var selectedExpression: UIImage = Image.expressionBar1
+    static var selectedExpression: UIImage = Image.expression1
     static var selectedEffect: UIImage?
     static var nickname: String?
     static var selfLoveScore: Int?

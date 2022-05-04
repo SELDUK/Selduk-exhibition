@@ -1,5 +1,5 @@
 //
-//  SelectFeatureViewController.swift
+//  SetNicknameViewController.swift
 //  Selduk-exhibition
 //
 //  Created by 권준상 on 2022/05/03.
@@ -9,28 +9,20 @@ import UIKit
 
 import SnapKit
 
-final class SelectFeatureViewController: UIViewController {
+final class SetNickNameViewController: UIViewController {
     
     let characterLabel = UILabel()
     let loadingBar = UIProgressView()
     let titleLabel = UILabel()
-    let containerView = UIView()
     let shapeImageView = UIImageView()
     let expressionImageView = UIImageView()
+    let effectImageView = UIImageView()
     let featureImageView = UIImageView()
+    let startQuotationMarkLabel = UILabel()
+    let finishQuotationMarkLabel = UILabel()
+    let nameTextField = UITextField()
     let nextButton = UIButton()
     let popButton = UIButton()
-    let collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 44
-        let cv = UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 120), collectionViewLayout: layout)
-        return cv
-    }()
-    
-    var cellImageList = [Image.featureBarNone, Image.featureBarHair1, Image.featureBarAngel, Image.featureBarFrog, Image.featureBarHat, Image.featureBarSleepHat, Image.featureBarHeadphone, Image.featureBarRibbon, Image.featureBarHair2, Image.featureBarSunglasses]
-    
-    var featureImageList = [nil, Image.featureHair1, Image.featureAngel, Image.featureFrog, Image.featureHat, Image.featureSleepHat, Image.featureHeadphone, Image.featureRibbon, Image.featureHair2, Image.featureSunglasses]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +30,10 @@ final class SelectFeatureViewController: UIViewController {
         setLayouts()
         registerTarget()
         setLoadingBarAnimation()
+    }
+    
+    override func touchesBegan(_: Set<UITouch>, with _: UIEvent?) {
+        view.endEditing(true)
     }
     
     private func registerTarget() {
@@ -48,36 +44,12 @@ final class SelectFeatureViewController: UIViewController {
     
     private func setLoadingBarAnimation() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.loadingBar.setProgress(3 / 8, animated: true)
+            self.loadingBar.setProgress(3 / 4, animated: true)
         }
     }
-
 }
 
-extension SelectFeatureViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 102, height: 102)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MakeCharacterCell", for: indexPath) as? MakeCharacterViewCell else { return UICollectionViewCell() }
-        
-        cell.setImage(image: cellImageList[indexPath.row])
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.featureImageView.image = featureImageList[indexPath.item]
-        CharacterData.selectedFeature = featureImageList[indexPath.item]
-    }
-}
-
-extension SelectFeatureViewController {
+extension SetNickNameViewController {
     private func setProperties() {
         view.do {
             $0.backgroundColor = .white
@@ -93,15 +65,38 @@ extension SelectFeatureViewController {
             $0.clipsToBounds = true
             $0.layer.sublayers![1].cornerRadius = 8.5
             $0.subviews[1].clipsToBounds = true
-            $0.progress = 1 / 4
+            $0.progress = 5 / 8
             $0.progressTintColor = UIColor.colorWithRGBHex(hex: 0x178900)
             $0.trackTintColor = .lightGray
         }
         
         titleLabel.do {
-            $0.text = "3. FEATURE"
+            $0.text = "6. NAME"
             $0.textColor = UIColor.black
             $0.font = .nanumPen(size: 50)
+        }
+        
+        startQuotationMarkLabel.do {
+            $0.text = "''"
+            $0.textColor = UIColor.black
+            $0.font = .nanumPen(size: 50)
+        }
+        
+        finishQuotationMarkLabel.do {
+            $0.text = "''"
+            $0.textColor = UIColor.black
+            $0.font = .nanumPen(size: 50)
+        }
+        
+        nameTextField.do {
+            $0.delegate = self
+            $0.autocapitalizationType = .none
+            $0.autocorrectionType = .no
+            $0.inputAccessoryView = nil
+            $0.textAlignment = .center
+            $0.font = .nanumPen(size: 50)
+            $0.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+            $0.becomeFirstResponder()
         }
         
         shapeImageView.do {
@@ -110,20 +105,18 @@ extension SelectFeatureViewController {
         }
         
         expressionImageView.do {
-            $0.image = Image.expression1
+            $0.image = CharacterData.selectedExpression
             $0.contentMode = .scaleToFill
         }
         
         featureImageView.do {
+            $0.image = CharacterData.selectedFeature
             $0.contentMode = .scaleToFill
         }
         
-        collectionView.do {
-            $0.register(MakeCharacterViewCell.self, forCellWithReuseIdentifier: "MakeCharacterCell")
-            $0.delegate = self
-            $0.dataSource = self
-            $0.contentInset = UIEdgeInsets(top: 8, left: 80, bottom: 8, right: 80)
-            $0.showsHorizontalScrollIndicator = false
+        effectImageView.do {
+            $0.image = CharacterData.selectedEffect
+            $0.contentMode = .scaleToFill
         }
         
         nextButton.do {
@@ -136,7 +129,6 @@ extension SelectFeatureViewController {
         popButton.do {
             $0.setImage(Image.arrowLeftIcon, for: .normal)
         }
-        
     }
     
     private func setLayouts() {
@@ -145,8 +137,8 @@ extension SelectFeatureViewController {
     }
     
     private func setViewHierarchy() {
-        view.addSubviews(characterLabel, loadingBar, titleLabel, containerView, collectionView, nextButton)
-        containerView.addSubviews(shapeImageView, expressionImageView, featureImageView)
+        view.addSubviews(characterLabel, loadingBar, titleLabel, shapeImageView, startQuotationMarkLabel, finishQuotationMarkLabel, nameTextField, nextButton)
+        shapeImageView.addSubviews(expressionImageView, featureImageView, effectImageView)
         shapeImageView.bringSubviewToFront(expressionImageView)
         expressionImageView.bringSubviewToFront(featureImageView)
     }
@@ -170,31 +162,41 @@ extension SelectFeatureViewController {
             $0.centerX.equalToSuperview()
         }
         
-        containerView.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom)
-            $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(collectionView.snp.top)
+        startQuotationMarkLabel.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(66)
+            $0.trailing.equalTo(nameTextField.snp.leading).offset(-10)
+        }
+        
+        nameTextField.snp.makeConstraints {
+            $0.centerY.equalTo(startQuotationMarkLabel)
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo(50)
+        }
+        
+        finishQuotationMarkLabel.snp.makeConstraints {
+            $0.centerY.equalTo(startQuotationMarkLabel)
+            $0.leading.equalTo(nameTextField.snp.trailing).offset(10)
         }
         
         shapeImageView.snp.makeConstraints {
-            $0.center.equalToSuperview()
+            $0.top.equalTo(nameTextField.snp.bottom).offset(66)
+            $0.centerX.equalToSuperview()
             $0.width.height.equalTo(350)
         }
         
         expressionImageView.snp.makeConstraints {
-            $0.center.equalToSuperview()
+            $0.centerX.centerY.equalToSuperview()
             $0.width.height.equalTo(350)
         }
         
         featureImageView.snp.makeConstraints {
-            $0.center.equalToSuperview()
+            $0.centerX.centerY.equalToSuperview()
             $0.width.height.equalTo(350)
         }
         
-        collectionView.snp.makeConstraints {
-            $0.leading.trailing.equalTo(safeArea)
-            $0.bottom.equalTo(nextButton.snp.top).offset(-80)
-            $0.height.equalTo(120)
+        effectImageView.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.width.height.equalTo(350)
         }
         
         nextButton.snp.makeConstraints {
@@ -207,12 +209,32 @@ extension SelectFeatureViewController {
     @objc private func buttonTapAction(_ sender: UIButton) {
         switch sender {
         case nextButton:
-            let selectExpressionViewController = SelectExpressionViewController()
-            navigationController?.pushViewController(selectExpressionViewController, animated: false)
+            if let name = nameTextField.text {
+                if name.trimmingCharacters(in: .whitespaces).count == 0 {
+                    nameTextField.text = name.trimmingCharacters(in: .whitespaces)
+                } else {
+                    CharacterData.nickname = name.trimmingCharacters(in: .whitespaces)
+                }
+            }
         case popButton:
             navigationController?.popViewController(animated: true)
         default:
             return
         }
     }
+    
+    @objc func textFieldDidChange() {
+        
+    }
+}
+
+extension SetNickNameViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+            guard let stringRange = Range(range, in: currentText) else { return false }
+         
+            let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+         
+            return updatedText.count <= 10
+        }
 }

@@ -46,6 +46,23 @@ enum Image {
     static let greenShapeRoundEar = UIImage(named: "shape_green_roundEar")!
     static let greenShapeJjang = UIImage(named: "shape_green_jjang")!
     
+    // 캐릭터 표정
+    static let expression1 = UIImage(named: "expression1")!
+    static let expression2 = UIImage(named: "expression2")!
+    static let expression3 = UIImage(named: "expression3")!
+    static let expression4 = UIImage(named: "expression4")!
+    static let expression5 = UIImage(named: "expression5")!
+    static let expression6 = UIImage(named: "expression6")!
+    static let expression7 = UIImage(named: "expression7")!
+    static let expression8 = UIImage(named: "expression8")!
+    static let expression9 = UIImage(named: "expression9")!
+    static let expression10 = UIImage(named: "expression10")!
+    static let expression11 = UIImage(named: "expression11")!
+    static let expression12 = UIImage(named: "expression12")!
+    static let expression13 = UIImage(named: "expression13")!
+    static let expression14 = UIImage(named: "expression14")!
+    static let expression15 = UIImage(named: "expression15")!
+
     // 캐릭터 표정바
     static let expressionBar1 = UIImage(named: "expressionBar1")!
     static let expressionBar2 = UIImage(named: "expressionBar2")!
@@ -63,7 +80,18 @@ enum Image {
     static let expressionBar14 = UIImage(named: "expressionBar14")!
     static let expressionBar15 = UIImage(named: "expressionBar15")!
     
-    // 특징 바
+    // 캐릭터 특징
+    static let featureHair1 = UIImage(named: "feature_hair1")!
+    static let featureHair2 = UIImage(named: "feature_hair2")!
+    static let featureSleepHat = UIImage(named: "feature_sleepHat")!
+    static let featureHat = UIImage(named: "feature_hat")!
+    static let featureFrog = UIImage(named: "feature_frog")!
+    static let featureSunglasses = UIImage(named: "feature_sunglasses")!
+    static let featureAngel = UIImage(named: "feature_angel")!
+    static let featureHeadphone = UIImage(named: "feature_headphone")!
+    static let featureRibbon = UIImage(named: "feature_ribbon")!
+    
+    // 캐릭터 특징 바
     static let featureBarHair1 = UIImage(named: "featureBar_hair1")!
     static let featureBarHair2 = UIImage(named: "featureBar_hair2")!
     static let featureBarSleepHat = UIImage(named: "featureBar_sleepHat")!
@@ -108,7 +136,7 @@ enum Image {
     static let effectBar10 = UIImage(named: "effectBar10")!
     static let effectBar11 = UIImage(named: "effectBar11")!
     
-    static let logoGIF = UIImage.gifImageWithName("seldukGIF")
+    static let logoGIF = UIImage.gifImageWithName("exhibitionSelduk")
     static let selduk = UIImage(named: "selduk")!
 
 }

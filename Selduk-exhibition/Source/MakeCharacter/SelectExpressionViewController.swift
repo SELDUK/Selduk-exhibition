@@ -31,7 +31,7 @@ final class SelectExpressionViewController: UIViewController {
     var cellImageList = [
         Image.expressionBar1, Image.expressionBar2, Image.expressionBar3, Image.expressionBar4, Image.expressionBar5, Image.expressionBar6, Image.expressionBar7, Image.expressionBar8, Image.expressionBar9, Image.expressionBar10, Image.expressionBar11, Image.expressionBar12, Image.expressionBar13, Image.expressionBar14, Image.expressionBar15]
     
-    var expressionImageList = [Image.expressionBar1, Image.expressionBar2, Image.expressionBar3, Image.expressionBar4, Image.expressionBar5, Image.expressionBar6, Image.expressionBar7, Image.expressionBar8, Image.expressionBar9, Image.expressionBar10, Image.expressionBar11, Image.expressionBar12, Image.expressionBar13, Image.expressionBar14, Image.expressionBar15]
+    var expressionImageList = [Image.expression1, Image.expression2, Image.expression3, Image.expression4, Image.expression5, Image.expression6, Image.expression7, Image.expression8, Image.expression9, Image.expression10, Image.expression11, Image.expression12, Image.expression13, Image.expression14, Image.expression15]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,7 +111,7 @@ extension SelectExpressionViewController {
         }
         
         expressionImageView.do {
-            $0.image = Image.expressionBar1
+            $0.image = Image.expression1
             $0.contentMode = .scaleToFill
         }
         
@@ -185,12 +185,12 @@ extension SelectExpressionViewController {
         
         expressionImageView.snp.makeConstraints {
             $0.center.equalToSuperview()
-            $0.width.height.equalTo(100)
+            $0.width.height.equalTo(350)
         }
         
         featureImageView.snp.makeConstraints {
             $0.center.equalToSuperview()
-            $0.width.height.equalTo(50)
+            $0.width.height.equalTo(350)
         }
         
         collectionView.snp.makeConstraints {

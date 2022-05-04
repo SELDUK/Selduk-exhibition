@@ -195,12 +195,12 @@ extension SelectEffectViewController {
         
         expressionImageView.snp.makeConstraints {
             $0.center.equalToSuperview()
-            $0.width.height.equalTo(100)
+            $0.width.height.equalTo(350)
         }
         
         featureImageView.snp.makeConstraints {
             $0.center.equalToSuperview()
-            $0.width.height.equalTo(50)
+            $0.width.height.equalTo(350)
         }
         
         collectionView.snp.makeConstraints {
@@ -219,8 +219,8 @@ extension SelectEffectViewController {
     @objc private func buttonTapAction(_ sender: UIButton) {
         switch sender {
         case nextButton:
-            let selectEffectViewController = SelectEffectViewController()
-            navigationController?.pushViewController(selectEffectViewController, animated: false)
+            let setNicknameViewController = SetNickNameViewController()
+            navigationController?.pushViewController(setNicknameViewController, animated: false)
         case popButton:
             navigationController?.popViewController(animated: true)
         default:

@@ -98,7 +98,7 @@ extension SelectShapeViewController {
         }
         
         expressionImageView.do {
-            $0.image = Image.expressionBar1
+            $0.image = Image.expression1
             $0.contentMode = .scaleToFill
         }
         
@@ -164,7 +164,7 @@ extension SelectShapeViewController {
         
         expressionImageView.snp.makeConstraints {
             $0.center.equalToSuperview()
-            $0.width.height.equalTo(100)
+            $0.width.height.equalTo(350)
         }
         
         collectionView.snp.makeConstraints {
