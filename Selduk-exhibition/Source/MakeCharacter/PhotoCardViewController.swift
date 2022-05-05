@@ -84,6 +84,7 @@ extension PhotoCardViewController {
         
         todayLabel.do {
             $0.text = monthAndDayFormatter.string(from: Date()).uppercased()
+            $0.textColor = .black
             $0.font = .nanumPen(size: 59)
         }
         
@@ -116,6 +117,7 @@ extension PhotoCardViewController {
         commentLabel.do {
             $0.text = "\"\(CharacterData.comment ?? "")\""
             $0.font = .nanumPen(size: 50)
+            $0.textColor = .black
             $0.lineBreakMode = .byWordWrapping
             $0.numberOfLines = 0
             $0.textAlignment = .center

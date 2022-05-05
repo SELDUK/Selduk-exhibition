@@ -9,17 +9,6 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
-//    private var backButtonAppearance: UIBarButtonItemAppearance = {
-//        let backButtonAppearance = UIBarButtonItemAppearance()
-//        backButtonAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.clear, .font: UIFont.systemFont(ofSize: 0.0)]
-//
-//        return backButtonAppearance
-//    }()
-//
-//    private var backButtonImage: UIImage? {
-//        return Image.arrowLeftIcon.withAlignmentRectInsets(UIEdgeInsets(top: 0.0, left: 0.0, bottom: 5.0, right: 0.0))
-//    }
-    
     func showToastMessageAlert(message: String) {
         let alert = UIAlertController(title: message,
                                       message: "",
@@ -37,10 +26,6 @@ class BaseViewController: UIViewController {
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = color
         appearance.shadowColor = nil
-
-//        appearance.setBackIndicatorImage(backButtonImage,
-//                                         transitionMaskImage: backButtonImage)
-//        appearance.backButtonAppearance = backButtonAppearance
         
         navigationController?.navigationBar.tintColor = UIColor.black
         navigationController?.navigationBar.standardAppearance = appearance

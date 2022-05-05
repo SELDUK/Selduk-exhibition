@@ -69,6 +69,7 @@ extension SetNickNameViewController {
         
         characterLabel.do {
             $0.text = "MY CHARACTER"
+            $0.textColor = .black
             $0.font = .nanumPen(size: 60)
         }
         
@@ -107,6 +108,7 @@ extension SetNickNameViewController {
             $0.inputAccessoryView = nil
             $0.textAlignment = .center
             $0.font = .nanumPen(size: 50)
+            $0.textColor = .black
             $0.becomeFirstResponder()
         }
         

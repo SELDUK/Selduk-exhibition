@@ -98,6 +98,7 @@ extension SelectExpressionViewController {
         
         characterLabel.do {
             $0.text = "MY CHARACTER"
+            $0.textColor = .black
             $0.font = .nanumPen(size: 60)
         }
         
@@ -133,6 +134,7 @@ extension SelectExpressionViewController {
         }
         
         collectionView.do {
+            $0.backgroundColor = .white
             $0.register(MakeCharacterViewCell.self, forCellWithReuseIdentifier: "MakeCharacterCell")
             $0.delegate = self
             $0.dataSource = self

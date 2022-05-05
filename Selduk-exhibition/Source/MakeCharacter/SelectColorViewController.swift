@@ -95,6 +95,7 @@ extension SelectColorViewController {
         
         characterLabel.do {
             $0.text = "MY CHARACTER"
+            $0.textColor = .black
             $0.font = .nanumPen(size: 60)
         }
         
@@ -125,6 +126,7 @@ extension SelectColorViewController {
         }
         
         collectionView.do {
+            $0.backgroundColor = .white
             $0.register(SelectColorCell.self, forCellWithReuseIdentifier: "ColorCell")
             $0.delegate = self
             $0.dataSource = self
