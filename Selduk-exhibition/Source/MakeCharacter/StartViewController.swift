@@ -12,6 +12,7 @@ import Then
 
 class StartViewController: BaseViewController {
 
+    let logoContainerView = UIView()
     let logoView = UIView()
     let logoGIFImageView = UIImageView(image: Image.logoGIF)
     let seldukImageView = UIImageView(image: Image.selduk)
@@ -50,15 +51,20 @@ extension StartViewController {
     }
     
     private func setViewHierarchy() {
-        view.addSubviews(logoView, startButton)
+        view.addSubviews(logoContainerView, startButton)
+        logoContainerView.addSubview(logoView)
         logoView.addSubviews(logoGIFImageView, seldukImageView)
     }
     
     private func setConstraints() {
         
+        logoContainerView.snp.makeConstraints {
+            $0.top.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(startButton.snp.top)
+        }
+        
         logoView.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.top.equalToSuperview().offset(370)
+            $0.center.equalToSuperview()
             $0.width.equalTo(233)
             $0.height.equalTo(239)
         }
@@ -79,7 +85,7 @@ extension StartViewController {
         
         startButton.snp.makeConstraints {
             $0.leading.trailing.bottom.equalToSuperview()
-            $0.height.equalTo(140)
+            $0.height.equalTo(100)
         }
     }
     

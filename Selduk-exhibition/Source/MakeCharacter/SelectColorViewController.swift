@@ -138,7 +138,7 @@ extension SelectColorViewController {
             $0.setTitle("NEXT", for: .normal)
             $0.setTitleColor(.white, for: .normal)
             $0.setBackgroundColor(.black, for: .normal)
-            $0.titleLabel?.font = .nanumPen(size: 60)
+            $0.titleLabel?.font = .nanumPen(size: 50)
         }
         
         popButton.do {
@@ -202,7 +202,7 @@ extension SelectColorViewController {
         nextButton.snp.makeConstraints {
             $0.bottom.equalToSuperview()
             $0.leading.trailing.equalTo(safeArea)
-            $0.height.equalTo(140)
+            $0.height.equalTo(100)
         }
     }
     
